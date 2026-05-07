@@ -45,39 +45,7 @@ Instead of switching 100% traffic instantly:
 
 ## 🏗️ Architecture
 
-```
-                    ┌─────────────────────────────────┐
-                    │         API Gateway              │
-                    │   (Single entry point for all    │
-                    │        user requests)            │
-                    └──────────────┬──────────────────┘
-                                   │
-               ┌───────────────────┴───────────────────┐
-               │                                       │
-    ┌──────────▼──────────┐               ┌────────────▼────────┐
-    │   Production Stage  │               │   Staging Stage     │
-    │   (90% traffic)     │               │   (Green testing)   │
-    └──────────┬──────────┘               └────────────┬────────┘
-               │                                       │
-    ┌──────────▼──────────┐               ┌────────────▼────────┐
-    │    Blue Lambda      │               │    Green Lambda     │
-    │    v1.0.0           │               │    v2.0.0           │
-    │    (Stable)         │               │    (New Version)    │
-    └─────────────────────┘               └─────────────────────┘
-               │                                       
-    ┌──────────▼──────────┐               
-    │  Canary (10%)       │               
-    │  → Green Lambda     │               
-    └─────────────────────┘               
-
-        ┌─────────────────────────────────┐
-        │         CloudWatch              │
-        │   Alarms: 4XX / 5XX errors      │
-        │   → SNS → Email Alert           │
-        └─────────────────────────────────┘
-```
-
----
+<img width="1187" height="947" alt="Screenshot 2026-05-07 221225" src="https://github.com/user-attachments/assets/26f1dc5c-15c0-4211-9300-85424bb0cfb5" />
 
 ## 🛠️ AWS Services Used
 

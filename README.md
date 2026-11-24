@@ -1,7 +1,7 @@
 # 🚀 Zero-Downtime API Deployments with AWS API Gateway
 
 > **Blue-Green + Canary Deployment Strategy using AWS Console**  
-> Built by [Amit P M](https://github.com/Amitpm8) | [LinkedIn](https://www.linkedin.com/in/amitpm8)
+> Built by [Amit P M](https://github.com/Amitpm8) | [LinkedIn](https://www.linkedin.com/in/amitops)
 
 ---
 
